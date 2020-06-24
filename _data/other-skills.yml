@@ -1,0 +1,7 @@
+- name: Git
+  percentage: 95
+  color: info
+
+- name: postgresSQL
+  percentage: 80
+  color: success

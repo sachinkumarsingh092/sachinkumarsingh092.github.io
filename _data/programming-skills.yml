@@ -1,0 +1,15 @@
+- name: C/C++
+  percentage: 90
+  color:
+
+- name: Python
+  percentage: 80
+  color: dark
+
+- name: HTML5/CSS3
+  percentage: 70
+  color: danger
+
+- name: Bash
+  percentage: 70
+  color: info
