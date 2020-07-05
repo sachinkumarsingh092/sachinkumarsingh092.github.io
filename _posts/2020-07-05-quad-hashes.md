@@ -6,17 +6,6 @@ color: success
 description: How to make a celestial hash code for a system of 4 objects.
 ---
 
-{% capture list_items %}
-Quad Detection
-- Quads based on x-sorting
-- Quads based on the Nearest Neighbor Approach
-Shift and Hash-Code formation
-- Angle calculation
-    - Using vectors
-    - Using atan2
-- Scale calculation
-{% endcapture %}
-{% include elements/list.html title="Table of Contents" type="toc" %}
 
 For matching a query image to a indexed image, it is necessary to make 
 their hash codes from the system of 4 star objects. This layer in the 
@@ -24,6 +13,18 @@ detection pipeline will focus on these quad identification and their
 convertion to a unique hash code. The hash codes will later be stored 
 in a **KD-tree** for quicks searches and retrieval with *`O(log(n))`* time-complexity.
 
+
+{% capture list_items %}
+1) Quad Detection
+- Quads based on x-sorting
+- Quads based on the Nearest Neighbor Approach
+2) Shift and Hash-Code formation
+2.1) Angle calculation
+    - Using vectors
+    - Using atan2
+2.2) Scale calculation
+{% endcapture %}
+{% include elements/list.html title="Table of Contents" type="toc" %}
 
 
 ## Quad Detection
@@ -134,4 +135,4 @@ double hash[4] = {Cx, Cy, Dx, Dy};
 We can use __KD-tree__ search to filter out duplicate codes and proceed to futher layers to match these codes to 
 the query hash-codes.
 
-**EOF** ;-)
+**EOF** :wave:
