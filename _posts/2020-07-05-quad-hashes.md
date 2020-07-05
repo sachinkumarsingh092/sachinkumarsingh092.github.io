@@ -23,6 +23,7 @@ in a **KD-tree** for quicks searches and retrieval with *`O(log(n))`* time-compl
     - Using vectors
     - Using atan2
 2.2) Scale calculation
+3) Conclusion
 {% endcapture %}
 {% include elements/list.html title="Table of Contents" type="toc" %}
 
@@ -132,7 +133,9 @@ struct quad{
 double hash[4] = {Cx, Cy, Dx, Dy};
 ```
 
-We can use __KD-tree__ search to filter out duplicate codes and proceed to futher layers to match these codes to 
-the query hash-codes.
+## Conclusion 
+We can use __KD-tree__ search to make hash-codes and to 
+filter out duplicate codes and proceed to futher layers to match these codes to 
+the query hash-code. For angle calculation `atan2` is preffered. 
 
 **EOF** :wave:
