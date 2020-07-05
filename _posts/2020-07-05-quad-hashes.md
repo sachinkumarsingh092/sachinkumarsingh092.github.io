@@ -25,6 +25,7 @@ Beyond 6 degrees, the accuracy of this approach falls steeply. This is a moving 
 based approach in which we sort the stars within a window by their x-coordinates alone, 
 and form quads of 4 stars sequentially from the sorted list.
 
+---
 
 - ##### Quads based on the Nearest Neighbor Approach
 
@@ -44,9 +45,9 @@ For efficient nearest neighbors queries, we first implemented a **`KD-Tree`** fo
 
 The above image shows a system of 4 stars. 
 
-{% include elements/highlight.html text="Before shifting, the coordinates of any point , say, **A**  is *{A.x, A.y}*." %}
-{% include elements/highlight.html text="After shifting, the coordinates of point **A**  is *{0, 0}* and that of 
-**B** is *{1, 1}*. The coordinates of **C** and **D** are determined on the basis of this shift." %}
+{% include elements/highlight.html text="Before shifting, the coordinates of any point , say, A  is {A.x, A.y}." %}
+{% include elements/highlight.html text="After shifting, the coordinates of point A  is {0, 0} and that of 
+B is {1, 1}. The coordinates of C and D are determined on the basis of this shift." %}
 
 
 
@@ -58,16 +59,16 @@ To calculate **C** and **D** we need to know angles **`Ɵ`** and **`ɸ`**. This 
 
 Let **AC**  be a vector from point **A** to point **C** and **AB**  be a vector from point **A** to point **B**.
 
-Now, **Ɵ** = arccos(**AC** . **AB** / \|**AC**\|\|**AB**\|)
+Now, `Ɵ` = arccos(**AC** . **AB** / \|**AC**\|\|**AB**\|)
 
-And similarly for **ɸ**.
+And similarly for `ɸ`.
 
 But this method can prove to be long and we will have to handle many cases for arccos's domain.
 
 - **Using atan2**
 
 A better method is to use `atan2` which is provided in many programming languages, including C. 
-It is the angel made by the vector **AC** with the positive *X-axis*.
+It is the angle made by the vector **AC** with the positive *X-axis*.
 
 ```c
 /* atan2 */
@@ -85,15 +86,21 @@ int main(int argc, char *argv[]) {
 #### Scale calculation
 
 As the points A and B are fixes now we have to determine the scale to find **r1** and **r2**. 
-Scale is the ratio of lengths of original **AB** and its length now. 
+Scale is the ratio of lengths of original **AB**(represented as AB.orig) and its length now. 
 
-So scale = 1/\|**AB**.original\|.
+So scale = 1 / mag(**AB**.orig).
 
-**r1** = scale*(\|**AC**.original\|) and **r2** = scale*(\|**AD**.original\|).
+where `mag(AB)` is the magnitude of **AB**.
 
-**{C.x, C.y}** = {*`r1cos(Ɵ)`*, *`r1sin(Ɵ)`*}. 
+Therefore,
 
-**{D.x, D.y}** = {*`r2cos(ɸ)`*, *`r2sin(ɸ)`*}.
+**r1** = scale*(`mag(AC.orig)`) **and** **r2** = scale*(`mag(AD.orig)`).
+
+and hence,
+
+**{`C.x`, `C.y`}** = {*`r1cos(Ɵ)`*, *`r1sin(Ɵ)`*}. 
+
+**{`D.x`, `D.y`}** = {*`r2cos(ɸ)`*, *`r2sin(ɸ)`*}.
 
 After all this maths, lets see how the quad structure should finally look:
 
