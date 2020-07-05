@@ -6,6 +6,18 @@ color: success
 description: How to make a celestial hash code for a system of 4 objects.
 ---
 
+{% capture list_items %}
+Quad Detection
+- Quads based on x-sorting
+- Quads based on the Nearest Neighbor Approach
+Shift and Hash-Code formation
+- Angle calculation
+    - Using vectors
+    - Using atan2
+- Scale calculation
+{% endcapture %}
+{% include elements/list.html title="Table of Contents" type="toc" %}
+
 For matching a query image to a indexed image, it is necessary to make 
 their hash codes from the system of 4 star objects. This layer in the 
 detection pipeline will focus on these quad identification and their 
@@ -14,7 +26,7 @@ in a **KD-tree** for quicks searches and retrieval with *`O(log(n))`* time-compl
 
 
 
-## Quad detection
+## Quad Detection
 
 
 - ##### Quads based on x-sorting
@@ -38,7 +50,7 @@ Hence this is the preffered method over x-sorting.
 For efficient nearest neighbors queries, we first implemented a **`KD-Tree`** for stars.
 
 
-## Shift and hash-code formation
+## Shift and Hash-Code formation
 
 {% include elements/figure.html image="../assets/star-system.png" caption="the shifted system" %}
 
@@ -50,7 +62,7 @@ B is {1, 1}. The coordinates of C and D are determined on the basis of this shif
 
 
 
-- **Angle calculation**
+##### Angle calculation
 
 To calculate **C** and **D** we need to know angles **`Ɵ`** and **`ɸ`**. This can be done in 2 ways:
 
@@ -58,7 +70,7 @@ To calculate **C** and **D** we need to know angles **`Ɵ`** and **`ɸ`**. This 
 
 Let **AC**  be a vector from point **A** to point **C** and **AB**  be a vector from point **A** to point **B**.
 
-Now, **`Ɵ`** = arccos(**`AC` . `AB`** / \ |**`AC`**\| \|**`AB`**\|)
+Now, **`Ɵ`** = arccos(**`AC` . `AB`** / \|**`AC`**\| \|**`AB`**\|)
 
 And similarly for **`ɸ`**.
 
@@ -82,7 +94,7 @@ int main(int argc, char *argv[]) {
 
 > Note: We will use original coordinates to calculate angles and later shift and use these angles for hash determination.
 
--  **Scale calculation**
+##### Scale calculation
 
 As the points A and B are fixes now we have to determine the scale to find **r1** and **r2**. 
 Scale is the ratio of lengths of original **AB**(represented as AB.orig) and its length now. 
@@ -93,9 +105,9 @@ where `mag(AB)` is the magnitude of **AB**.
 
 Therefore,
 
-**r1** = `scale`\*(`mag(AC.orig)`) 
+**r1** = `scale`\* (`mag(AC.orig)`) 
 
-**r2** = `scale`\*(`mag(AD.orig)`)
+**r2** = `scale`\* (`mag(AD.orig)`)
 
 and hence,
 
@@ -119,5 +131,7 @@ struct quad{
 double hash[4] = {Cx, Cy, Dx, Dy};
 ```
 
-We can use __KD-tree__ search to filter out duplicate codes and proceed to futher layers to math these codes to 
-the query hash codes. Of corse, there is still a room for devvelopment.
+We can use __KD-tree__ search to filter out duplicate codes and proceed to futher layers to match these codes to 
+the query hash-codes.
+
+**EOF** ;-)
