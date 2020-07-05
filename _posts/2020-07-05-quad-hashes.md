@@ -25,7 +25,6 @@ Beyond 6 degrees, the accuracy of this approach falls steeply. This is a moving 
 based approach in which we sort the stars within a window by their x-coordinates alone, 
 and form quads of 4 stars sequentially from the sorted list.
 
----
 
 - ##### Quads based on the Nearest Neighbor Approach
 
@@ -51,7 +50,7 @@ B is {1, 1}. The coordinates of C and D are determined on the basis of this shif
 
 
 
-#### Angle calculation
+- **Angle calculation**
 
 To calculate **C** and **D** we need to know angles **`Ɵ`** and **`ɸ`**. This can be done in 2 ways:
 
@@ -59,9 +58,9 @@ To calculate **C** and **D** we need to know angles **`Ɵ`** and **`ɸ`**. This 
 
 Let **AC**  be a vector from point **A** to point **C** and **AB**  be a vector from point **A** to point **B**.
 
-Now, `Ɵ` = arccos(**AC** . **AB** / \|**AC**\|\|**AB**\|)
+Now, **`Ɵ`** = arccos(**`AC` . `AB`** / \ |**`AC`**\| \|**`AB`**\|)
 
-And similarly for `ɸ`.
+And similarly for **`ɸ`**.
 
 But this method can prove to be long and we will have to handle many cases for arccos's domain.
 
@@ -83,24 +82,26 @@ int main(int argc, char *argv[]) {
 
 > Note: We will use original coordinates to calculate angles and later shift and use these angles for hash determination.
 
-#### Scale calculation
+-  **Scale calculation**
 
 As the points A and B are fixes now we have to determine the scale to find **r1** and **r2**. 
 Scale is the ratio of lengths of original **AB**(represented as AB.orig) and its length now. 
 
-So scale = 1 / mag(**AB**.orig).
+So, `scale` = 1 / `mag(AB.orig)`
 
 where `mag(AB)` is the magnitude of **AB**.
 
 Therefore,
 
-**r1** = scale*(`mag(AC.orig)`) **and** **r2** = scale*(`mag(AD.orig)`).
+**r1** = `scale`\*(`mag(AC.orig)`) 
+
+**r2** = `scale`\*(`mag(AD.orig)`)
 
 and hence,
 
-**{`C.x`, `C.y`}** = {*`r1cos(Ɵ)`*, *`r1sin(Ɵ)`*}. 
+**{`C.x`, `C.y`}** = {*`r1cos(Ɵ)`*, *`r1sin(Ɵ)`*}
 
-**{`D.x`, `D.y`}** = {*`r2cos(ɸ)`*, *`r2sin(ɸ)`*}.
+**{`D.x`, `D.y`}** = {*`r2cos(ɸ)`*, *`r2sin(ɸ)`*}
 
 After all this maths, lets see how the quad structure should finally look:
 
