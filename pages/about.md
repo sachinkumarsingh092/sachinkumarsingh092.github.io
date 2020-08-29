@@ -8,7 +8,7 @@ weight: 3
 # **About Me**
 
 Hi I am **{{ site.author.name }}** :wave:,<br>
-I'm a 2nd year student at USICT, GGSIPU in Information Technology. 
+I'm a 3rd year student at USICT, GGSIPU in Information Technology. 
 
 <div class="row">
 {% include about/skills.html title="Programming Skills" source=site.data.programming-skills %}
