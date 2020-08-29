@@ -6,8 +6,7 @@ color: primary
 description: A short description of what work was done, what code got merged, what code didn't get merged, and what's left to do.
 ---
 
-{% include elements/figure.html image="../assets/GSoC.png" caption="GNU" %}
-
+![alt text](../assets/GSoC.png "Google Summer of Code 2020")
 The aim of this project is to re-align different images to a common coordinate system and make a common cataloge. This id called image registration. After registration, we have to build the library to remove non-linear warpings from them. Finally all of this seperate projects have to be mergd with the existing GNU Astro ecosystem.
 
 ### Work Done
