@@ -1,6 +1,6 @@
 ---
 title: Making Quad Hash-Codes for object detection and matching
-tags: [Algorithms, Astronomy, C]
+tags: [Algorithms, Astronomy, C, GSoC]
 style: fill
 color: success
 description: Method to make a celestial hash-code for a system of 4 objects.

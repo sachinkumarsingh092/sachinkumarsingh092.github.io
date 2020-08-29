@@ -30,9 +30,9 @@ Final merged commits in [savannah](http://git.savannah.gnu.org/cgit/gnuastro.git
 ##### The main repository for the quad-hash matching algorithm is [here](https://gitlab.com/sachinkumarsingh092/gnuastro-matching-fits-nohealpix).
 
 - Implemented an efficient method to find possible quads in catalogue without the use of any external library (such as HEALPix).
-- Implemented multithreaded operations when finding a quad and making its hash code improving efficiency.
+- Implemented multithreaded operations when finding a quad and making its hash code improving efficiency during large data computations.
 - Implemented functions to help in visualisations during development.
-- Implemented an index-based `kd-tree` which is highly space efficient based on `Quickselect` method.
+- Implemented an index-based `kd-tree` which is highly space/RAM efficient based on `Quickselect` method.
 - Implemented nearest neighbours searches for quads using kd-tree.
 
 All commits for this project are [here](https://gitlab.com/sachinkumarsingh092/gnuastro-matching-fits-nohealpix/-/commits/master).
@@ -55,7 +55,7 @@ All tasks that are done (including tasks before the coding period) are listed [h
 
 ### What's left
 
-- More robust method to match the query quads to reference quads is to be found. Our aim is to achieve a highly efficient software which is fast and also space efficient. The current method is brute force approach which can possibly fail in certain cases. Range-based matching within a specific threshold is required.
+- More robust method to match the query quads to reference quads is to be found. Our aim is to achieve a highly efficient software which is both space/RAM and CPU efficient. The current method is brute force approach which can possibly fail in certain cases. Range-based matching within a specific threshold is required.
 - Due to change in proposal, the non-linear warping is to be done later on when matching is working properly.
 
 ### Final Words
