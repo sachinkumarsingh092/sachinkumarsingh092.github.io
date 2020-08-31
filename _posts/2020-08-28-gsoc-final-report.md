@@ -23,9 +23,9 @@ All commits for this project are [here](https://gitlab.com/sachinkumarsingh092/g
 
 Final merged commits in [savannah](http://git.savannah.gnu.org/cgit/gnuastro.git/):
 
-- [All convertions between different WCS distortions](http://git.savannah.gnu.org/cgit/gnuastro.git/commit/?id=7da840d48a1364a339ec48a06d9b6fb2ca5be9ad)
+- [All convertions between different WCS distortions](http://git.savannah.gnu.org/cgit/gnuastro.git/commit/?id=7da840d48a1364a339ec48a06d9b6fb2ca5be9ad).
 - [Fixed --wcsdistortion when used without HDUs data](http://git.savannah.gnu.org/cgit/gnuastro.git/commit/?id=7dca196b6f7f588482772f3c059866647e812689).
-- [Fixed default size with --wcsdistortion=SIP when no input data is provided.](http://git.savannah.gnu.org/cgit/gnuastro.git/commit/?id=808c95dc56baf023928eeab3edf8bc6e3f572de0)
+- [Fixed default size with --wcsdistortion=SIP when no input data is provided.](http://git.savannah.gnu.org/cgit/gnuastro.git/commit/?id=808c95dc56baf023928eeab3edf8bc6e3f572de0).
 
 ##### The main repository for the quad-hash matching algorithm is [here](https://gitlab.com/sachinkumarsingh092/gnuastro-matching-fits-nohealpix).
 
@@ -36,6 +36,11 @@ Final merged commits in [savannah](http://git.savannah.gnu.org/cgit/gnuastro.git
 - Implemented nearest neighbours searches for quads using kd-tree.
 
 All commits for this project are [here](https://gitlab.com/sachinkumarsingh092/gnuastro-matching-fits-nohealpix/-/commits/master).
+
+Final merged commits in [savannah](http://git.savannah.gnu.org/cgit/gnuastro.git/):
+
+- [Implemented new k-d tree library](http://git.savannah.gnu.org/cgit/gnuastro.git/commit/?id=cf6ca3cc98a4df0dd5c927ce02115d07d480aea9).
+
 The final matching method to finally find variables for WCS calculations are on [this](https://gitlab.com/sachinkumarsingh092/gnuastro-matching-fits-nohealpix/-/tree/make-wcs-matrix) branch which will be merged after a more robust method for matching is found.
 
 ### Tasks Done and discusssions on Savannah
