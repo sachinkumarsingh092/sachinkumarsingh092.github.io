@@ -2,7 +2,7 @@
 title: Installing Arch Linux
 tags: [Arch, Linux]
 style: fill
-color: primary
+color: dark
 description: Guide to installing Arch Linux from scratch.
 ---
 
@@ -44,12 +44,12 @@ I have both SSD (128 GB, /dev/sdb) and HDD (1 TB, /dev/sda) drivers and will mak
 
 | Mount Point Name      | Partion               | Partion Type          | Suggested Size        |
 |:----------------------|:----------------------|:----------------------|:----------------------|
-| `[SWAP]`              | `/dev/sda`**a**       | Linux swap            | More than 512 MiB     |
-| `/home`               | `/dev/sda`**b**       | Home partiotion       | At least 20 GB        |
-| `/boot/efi`           | `/dev/sdb`**c**       | EFI system partition  | At least 260 MiB      |
-| `/`                   | `/dev/sdb`**d**       | Linux x86-64 root (/) | At least 30 GB        |
+| `[SWAP]`              | `/dev/sdaw`           | Linux swap            | More than 512 MiB     |
+| `/home`               | `/dev/sdax`           | Home partiotion       | At least 20 GB        |
+| `/boot/efi`           | `/dev/sdby`           | EFI system partition  | At least 260 MiB      |
+| `/`                   | `/dev/sdbz`           | Linux x86-64 root (/) | At least 30 GB        |
 
-where a, b, c and d are the serial number for the partions.
+where w, x, y and z are the serial number for the partions.
 
 
 Start GNU Parted on device. 
