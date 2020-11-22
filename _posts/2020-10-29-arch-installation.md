@@ -177,7 +177,7 @@ Exit the chroot environment:
 ```
 
 Unmount the partitions and reboot the system:
-```zsh
+```bash
 # umount /mnt/boot
 # umount /mnt
 # systemctl reboot
