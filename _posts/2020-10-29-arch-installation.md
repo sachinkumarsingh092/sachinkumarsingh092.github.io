@@ -6,12 +6,12 @@ color: dark
 description: Guide to installing Arch Linux from scratch.
 ---
 
-![Arch Linux](../assets/arch.jpg "Arch Linux")
+![Arch Linux](../assets/arch.png "Arch Linux")
 I've written this blog so as to easily import all my current configurations when migrating to a new system.
 For the official installation guide, head over to [this arch wiki](https://wiki.archlinux.org/index.php/installation_guide).
 It's easy to mess up your system as you'll have root privilages during the installation. Search the commands if you are not sure what it does. [Arch wiki](https://wiki.archlinux.org/) is the best resource at your disposal. Use it wisely ;-)
 
-{% include elements/highlight.html text="I'll use a USB flash drive to make an installation medium from the ISO image and [rufus](https://rufus.ie/) to create bootable USB flash drives." %}
+{% include elements/highlight.html text="I'll use a USB flash drive to make an installation medium from the ISO image and rufus (https://rufus.ie/) to create bootable USB flash drives." %}
 
 ## Pre-installation
 In the boot configuration (hardware), make sure that the bios only boots into UEFI mode, not "legacy" mode, the modern GRUB bootloader (or other bootloaders) only work on UEFI. To verify the boot mode, list the efivars directory:
@@ -20,7 +20,7 @@ In the boot configuration (hardware), make sure that the bios only boots into UE
 ```
 If the command shows the directory without error, then the system is booted in UEFI mode.
 
-{% include elements/highlight.html text="If you also have a discrete graphic card, it can cause problems in the boot or shutdown. So try the different configurations (`only integrated`, `only discrete`, `hybrid` or `automatic`). Currently the `only integrated` suits me best." %}
+{% include elements/highlight.html text="If you also have a discrete graphic card, it can cause problems in the boot or shutdown. So try the different configurations ('only integrated', 'only discrete', 'hybrid' or 'automatic')." %}
 
 
 #### Wifi
@@ -42,7 +42,7 @@ Use `lsblk` to check the block devices on the disks:
 # lsblk
 ```
 
-I have both SSD (128 GB, /dev/sdb) and HDD (1 TB, /dev/sda) drivers and will make the partions to boot in UEFI using [GPT](https://wiki.archlinux.org/index.php/Partitioning#GUID_Partition_Table) partioning scheme, as given in the table below:
+I have both SSD (128 GB, `/dev/sdb`) and HDD (1 TB, `/dev/sda`) drivers and will make the partions to boot in UEFI using [GPT](https://wiki.archlinux.org/index.php/Partitioning#GUID_Partition_Table) partioning scheme, as given in the table below:
 
 | Mount Point Name      | Partion               | Partion Type          | Suggested Size        |
 |:----------------------|:----------------------|:----------------------|:----------------------|
@@ -231,7 +231,7 @@ done
 ```
 ***
 
-{% include elements/highlight.html text="If you want some environment variables to be available for all users and upon gdm startup, then you have to place them in a `sh` file in the `/etc/profile.d/` directory" %}
+{% include elements/highlight.html text="If you want some environment variables to be available for all users and upon gdm startup, then you have to place them in a `.sh` file in the `/etc/profile.d/` directory" %}
 
 ## Packages
 
@@ -261,7 +261,7 @@ To use the GPU, enable the graphic card:
 ```zsh
 # pacman -S xf86-video-nouveau xf86-video-ati
 ```
-For more, see this page https://wiki.archlinux.org/index.php/PRIME.
+For more, see [this](https://wiki.archlinux.org/index.php/PRIME) page.
 
 
 #### GUI
@@ -272,7 +272,7 @@ Install GNOME and enable `gdm` (GNOME Display Manager). With the next reboot, yo
 # systemctl enable gdm
 ```
 
-For more, see this page https://wiki.archlinux.org/index.php/GNOME.
+For more, see [this](https://wiki.archlinux.org/index.php/GNOME) page.
 
 #### Audio device
 ```zsh
@@ -321,6 +321,6 @@ Nice tool to generally review all hardware, including the manufacturers:
 # pacman -S hwinfo
 ```
 
-Also see https://wiki.archlinux.org/index.php/General_recommendations for other system management directions and post-installation tutorials.
+Also see [general recommendation](https://wiki.archlinux.org/index.php/General_recommendations) for other system management directions and post-installation tutorials.
 
-A recommended list of applications can be found here: https://wiki.archlinux.org/index.php/List_of_applications.
+A recommended list of applications can be found [here](https://wiki.archlinux.org/index.php/List_of_applications).
