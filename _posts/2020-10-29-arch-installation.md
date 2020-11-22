@@ -2,7 +2,7 @@
 title: Installing Arch Linux
 tags: [Arch, Linux]
 style: fill
-color: sucess
+color: primary
 description: Guide to installing Arch Linux from scratch.
 ---
 
