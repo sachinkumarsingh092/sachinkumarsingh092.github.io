@@ -226,11 +226,12 @@ Install other basic necssary software:
 
 If you have existing SSH keys in `~/.ssh`, run `ssh-add` to add them to the authentication agent.
 
+{% include elements/highlight.html text="If you want some environment variables to be available for all users and upon gdm startup, then you have to place them in a `.sh` file in the `/etc/profile.d/` directory" %}
 
 ***
 **To completly wipe the disk**
 
-To completely remove the operating system from a hard disk, write random values in all the bits multiple times (hard disks are designed to keep the previous state of their bits). For example, if you have 5 partiotions on your hard disk, do the following:
+To completely remove the operating system from a hard disk, write random values in all the bits multiple times (hard disks are designed to keep the previous state of their bits).
 ```zsh
 for partition in 1 2 3 4 5; do
   echo "rewrite $partition \n"
@@ -239,7 +240,6 @@ done
 ```
 ***
 
-{% include elements/highlight.html text="If you want some environment variables to be available for all users and upon gdm startup, then you have to place them in a `.sh` file in the `/etc/profile.d/` directory" %}
 
 ## Packages
 
