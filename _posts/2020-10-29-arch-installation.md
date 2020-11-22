@@ -13,6 +13,14 @@ It's easy to mess up your system as you'll have root privilages during the insta
 
 {% include elements/highlight.html text="I'll use a USB flash drive to make an installation medium from the ISO image and rufus (https://rufus.ie/) to create bootable USB flash drives." %}
 
+{% capture list_items %}
+Pre-installation
+Installation and configuration
+Packages
+{% endcapture %}
+{% include elements/list.html title="Table of Contents" type="toc" %}
+
+
 ## Pre-installation
 In the boot configuration (hardware), make sure that the bios only boots into UEFI mode, not "legacy" mode, the modern GRUB bootloader (or other bootloaders) only work on UEFI. To verify the boot mode, list the efivars directory:
 ```zsh
@@ -131,7 +139,7 @@ Set up the timezone and generate `/etc/adjtime:
 Setup the locale:
 ```zsh
 # vim /etc/locale.gen        
-Uncomment `en_US.UTF-8 UTF-8`
+ --> Uncomment `en_US.UTF-8 UTF-8`
 # locale-gen
 # echo "LANG=en_US.UTF-8" > /etc/locale.conf
 ```
@@ -244,10 +252,9 @@ Install the Intel graphic driver.
 If you have a GPU, let's disable it for now. You can do that with these steps:
 ```zsh
 # vim /etc/modprobe.d/disable-gpu.conf
-
-Insert these lines:
-`blacklist nvidia`
-`blacklisst nouveau`
+--> Insert these lines:
+     `blacklist nvidia`
+     `blacklisst nouveau`
 ```
 
 Add the absolute address of the `disable-gpu.conf` file above to the `FILES` array of `/etc/mkinitcpio.conf`
