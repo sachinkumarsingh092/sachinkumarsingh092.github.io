@@ -51,6 +51,7 @@ I have both SSD (128 GB, /dev/sdb) and HDD (1 TB, /dev/sda) drivers and will mak
 
 where a, b, c and d are the serial number for the partions.
 
+
 Start GNU Parted on device. 
 ```zsh
 # parted /dev/sda 
