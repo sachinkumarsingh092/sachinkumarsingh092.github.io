@@ -22,7 +22,7 @@ Packages
 
 
 ## Pre-installation
-In the boot configuration (hardware), make sure that the bios only boots into UEFI mode, not "legacy" mode, the modern GRUB bootloader (or other bootloaders) only work on UEFI. To verify the boot mode, list the efivars directory:
+In the boot configuration (hardware), make sure that the bios only boots into UEFI mode, not "legacy" mode, the modern GRUB bootloader (or other bootloaders) only work on UEFI. To verify the boot mode, list the `efivars` directory:
 ```zsh
 # ls /sys/firmware/efi/efivars
 ```
@@ -95,25 +95,25 @@ Set up the file system of the root partition:
 ```zsh
 # mkfs.ext4 /dev/sdbX
 ```
-Mount the decrypted partition into `/mnt':
+Mount the decrypted partition into `/mnt`:
 ```zsh
 # mount /dev/sdbX /mnt
 ```
-Mount the  boot partition under `/mnt/boot':
+Mount the  boot partition under `/mnt/boot`:
 ```zsh
 # mkfs.vfat /dev/sdbY
 # mkdir /mnt/boot
 # mount /dev/sdbY /mnt/boot
 ```
 
-Mount all other partitions you may have on your system under `/mnt' (future root directory).
+Mount all other partitions you may have on your system under `/mnt` (future root directory).
 
-Even a small SWAP partition can be useful (atleast to avoid warnings). Once you have set up such a partition, you can format and activate it like this:
+Even a small `SWAP` partition can be useful (atleast to avoid warnings). Once you have set up such a partition, you can format and activate it like this:
 ```zsh
 # mkswap /dev/sdaX
 # swapon /dev/sdaX
 ```
-genfstab will later detect mounted file systems and swap space.
+`genfstab` will later detect mounted file systems and swap space.
 
 ## Installation and configuration
 Install the base operating system components:
