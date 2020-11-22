@@ -6,7 +6,7 @@ color: dark
 description: Guide to installing Arch Linux from scratch.
 ---
 
-![Arch Linux](../assets/arch.png "Arch Linux")
+![Arch Linux](../assets/arch.jpg "Arch Linux")
 I've written this blog so as to easily import all my current configurations when migrating to a new system.
 For the official installation guide, head over to [this arch wiki](https://wiki.archlinux.org/index.php/installation_guide).
 
