@@ -11,7 +11,7 @@ I've written this blog so as to easily import all my current configurations when
 For the official installation guide, head over to [this arch wiki](https://wiki.archlinux.org/index.php/installation_guide).
 It's easy to mess up your system as you'll have root privilages during the installation. Search the commands if you are not sure what it does. [Arch wiki](https://wiki.archlinux.org/) is the best resource at your disposal. Use it wisely ;-)
 
-> I'll use a USB flash drive to make an installation medium from the ISO image and [rufus](https://rufus.ie/) to create bootable USB flash drives.
+{% include elements/highlight.html text="I'll use a USB flash drive to make an installation medium from the ISO image and [rufus](https://rufus.ie/) to create bootable USB flash drives." %}
 
 ## Pre-installation
 In the boot configuration (hardware), make sure that the bios only boots into UEFI mode, not "legacy" mode, the modern GRUB bootloader (or other bootloaders) only work on UEFI. To verify the boot mode, list the efivars directory:
@@ -20,7 +20,8 @@ In the boot configuration (hardware), make sure that the bios only boots into UE
 ```
 If the command shows the directory without error, then the system is booted in UEFI mode.
 
-> If you also have a discrete graphic card, it can cause problems in the boot or shutdown. So try the different configurations    (`only integrated`, `only discrete`, `hybrid` or `automatic`). Currently the `only integrated` suits me best.
+{% include elements/highlight.html text="If you also have a discrete graphic card, it can cause problems in the boot or shutdown. So try the different configurations (`only integrated`, `only discrete`, `hybrid` or `automatic`). Currently the `only integrated` suits me best." %}
+
 
 #### Wifi
 If you don't have an Ethernet port to connect with the internet, follow these steps to set up the wifi.
@@ -199,8 +200,9 @@ Define the system users:
 # passwd USERNAME
 ```
 
-Enable Sudo for the users (where necessary). 
-> NOTE that the first time you run `sudo ...` you will get a warning, but that occurs only at the first time. It will not show up on the next runs of sudo.
+Enable Sudo for the users (where necessary).
+{% include elements/highlight.html text="NOTE that the first time you run `sudo ...` you will get a warning, but that occurs only at the first time. It will not show up on the next runs of sudo." %}
+
 ```zsh
 # vim /etc/sudoers
 --> Add "USERNAME ALL=(ALL) ALL" after you see a similar line
@@ -216,3 +218,109 @@ Install other basic necssary software:
 
 If you have existing SSH keys in `~/.ssh`, run `ssh-add` to add them to the authentication agent.
 
+
+***
+**To completly wipe the disk**
+
+To completely remove the operating system from a hard disk, write random values in all the bits multiple times (hard disks are designed to keep the previous state of their bits). For example, if you have 5 partiotions on your hard disk, do the following:
+```zsh
+for partition in 1 2 3 4 5; do
+  echo "rewrite $partition \n"
+  dd if=/dev/urandom of=/dev/sda bs=8b conv=notrunc
+done
+```
+***
+
+{% include elements/highlight.html text="If you want some environment variables to be available for all users and upon gdm startup, then you have to place them in a `sh` file in the `/etc/profile.d/` directory" %}
+
+## Packages
+
+#### Graphic drivers
+
+Install the Intel graphic driver.
+```zsh
+# pacman -S xf86-video-intel
+```
+If you have a GPU, let's disable it for now. You can do that with these steps:
+```zsh
+# vim /etc/modprobe.d/disable-gpu.conf
+
+Insert these lines:
+`blacklist nvidia`
+`blacklisst nouveau`
+```
+
+Add the absolute address of the `disable-gpu.conf` file above to the `FILES` array of `/etc/mkinitcpio.conf`
+
+Rebuild the kernel image with:
+```zsh
+# mkinitcpio -p linux
+```
+
+To use the GPU, enable the graphic card:
+```zsh
+# pacman -S xf86-video-nouveau xf86-video-ati
+```
+For more, see this page https://wiki.archlinux.org/index.php/PRIME.
+
+
+#### GUI
+Install GNOME and enable `gdm` (GNOME Display Manager). With the next reboot, you should go into a GUI.
+```zsh
+# pacman -S gnome gnome-extra gdm gnome-tweak-tool evince xorg-xrandr
+# pacman -R gnome-builder
+# systemctl enable gdm
+```
+
+For more, see this page https://wiki.archlinux.org/index.php/GNOME.
+
+#### Audio device
+```zsh
+# pacman -S sof-firmware alsa-utils alsa-ucm-conf
+```
+
+#### Media player
+```zsh
+# pacman -S qt5 vlc gst-libav
+```
+
+#### Libre office
+Install the "-fresh" package which gets regularly updated:
+```zsh
+# pacman -S libreoffice-fresh
+```
+
+#### Neovim
+[Neovim](https://neovim.io/) is a fork of vim with a lot of GUI enhancements and other modern features:
+```zsh
+# pacman -S neovim
+```
+
+#### Usb formatter
+To format a USB (which might also be put into a windows system) you can use: `mkdosfs -F 32 -I /dev/SDD` (as root and after installing `dosfstools` in pacman).
+```zsh
+# pacman -S dosfstools
+```
+
+#### Git
+Install git:
+```zsh
+# pacman -S git
+```
+
+Add your name and settings:
+```zsh
+$ git config --global user.name "YOUR NAME"
+$ git config --global user.email YOUR@EMAIL
+$ git config --global core.editor nvim
+```
+
+#### Hardware Info
+Nice tool to generally review all hardware, including the manufacturers:
+```zsh
+# pacman -S hwinfo
+```
+
+Also see https://wiki.archlinux.org/index.php/General_recommendations for other system management directions and post-installation tutorials.
+
+A recommended list of applications can be found here: https://wiki.archlinux.org/index.php/List_of_applications.
