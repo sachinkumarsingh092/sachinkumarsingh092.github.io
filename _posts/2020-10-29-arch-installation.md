@@ -233,8 +233,8 @@ If you have existing SSH keys in `~/.ssh`, run `ssh-add` to add them to the auth
 
 To completely remove the operating system from a hard disk, write random values in all the bits multiple times (hard disks are designed to keep the previous state of their bits).
 ```zsh
-for partition in 1 2 3 4 5; do
-  echo "rewrite $partition \n"
+for n in 1 2 3 4 5; do
+  echo "rewrite $n \n"
   dd if=/dev/urandom of=/dev/sda bs=8b conv=notrunc
 done
 ```
