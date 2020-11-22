@@ -253,8 +253,8 @@ If you have a GPU, let's disable it for now. You can do that with these steps:
 ```zsh
 # vim /etc/modprobe.d/disable-gpu.conf
 --> Insert these lines:
-     `blacklist nvidia`
-     `blacklisst nouveau`
+     blacklist nvidia
+     blacklisst nouveau
 ```
 
 Add the absolute address of the `disable-gpu.conf` file above to the `FILES` array of `/etc/mkinitcpio.conf`
@@ -272,7 +272,7 @@ For more, see [this](https://wiki.archlinux.org/index.php/PRIME) page.
 
 
 #### GUI
-Install GNOME and enable `gdm` (GNOME Display Manager). With the next reboot, you should go into a GUI.
+Install `GNOME` and enable `gdm` (GNOME Display Manager). With the next reboot, you should go into a GUI.
 ```zsh
 # pacman -S gnome gnome-extra gdm gnome-tweak-tool evince xorg-xrandr
 # pacman -R gnome-builder
