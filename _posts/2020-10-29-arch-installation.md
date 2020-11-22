@@ -11,7 +11,7 @@ I've written this blog so as to easily import all my current configurations when
 For the official installation guide, head over to [this arch wiki](https://wiki.archlinux.org/index.php/installation_guide).
 It's easy to mess up your system as you'll have root privilages during the installation. Search the commands if you are not sure what it does. [Arch wiki](https://wiki.archlinux.org/) is the best resource at your disposal. Use it wisely ;-)
 
-> I'll use a USB flash drive to make an installation medium from the ISO image. I use [rufus](https://rufus.ie/) create bootable USB flash drives.
+> I'll use a USB flash drive to make an installation medium from the ISO image and [rufus](https://rufus.ie/) to create bootable USB flash drives.
 
 ## Pre-installation
 In the boot configuration (hardware), make sure that the bios only boots into UEFI mode, not "legacy" mode, the modern GRUB bootloader (or other bootloaders) only work on UEFI. To verify the boot mode, list the efivars directory:
@@ -156,9 +156,8 @@ Set the root password:
 
 Install the necessary packages and enable their systemd services:
 ```zsh
-# pacman -S intel-ucode iw iwd wpa_supplicant dialog grub nano \
-            dhcpcd efibootmgr parted networkmanager \
-            network-manager-applet
+# pacman -S intel-ucode iw iwd wpa_supplicant dialog grub nano dhcpcd efibootmgr parted networkmanager network-manager-applet
+
 # systemctl enable NetworkManager
 ```
 Use GRUB for the bootloader. Note that the GPT table is only for the DEVICE (not partition). So if you didn't change the partition table of the device, you don't need to worry about that. Then open `/etc/default/grub` and make the following corrections:
@@ -210,11 +209,8 @@ Enable Sudo for the users (where necessary).
 
 Install other basic necssary software:
 ```zsh
-# pacman -S openssh gdb libcups git xarchiver ntfs-3g \
-            firefox wget dosfstools nuspell lzip rsync \
-            ifplugd aspell aspell-en exfat-utils fuse-exfat \
-            adobe-source-han-sans-otc-fonts otf-ipafont sshfs \
-            noto-fonts-extra  
+# pacman -S openssh gdb libcups git xarchiver ntfs-3g firefox wget dosfstools nuspell lzip rsync ifplugd aspell aspell-en exfat-utils fuse-exfat adobe-source-han-sans-otc-fonts otf-ipafont sshfs noto-fonts-extra  
+
 # systemctl enable sshd
 ```
 
