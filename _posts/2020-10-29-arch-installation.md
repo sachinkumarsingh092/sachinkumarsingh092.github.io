@@ -130,7 +130,7 @@ Go into the newly setup root system:
 # arch-chroot /mnt
 ```
 
-Set up the timezone and generate `/etc/adjtime:
+Set up the timezone and generate `/etc/adjtime`:
 ```zsh
 # ln -sf /usr/share/zoneinfo/Region/City /etc/localtime
 # hwclock --systohc
