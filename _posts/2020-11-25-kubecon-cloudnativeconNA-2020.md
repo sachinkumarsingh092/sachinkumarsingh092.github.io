@@ -21,7 +21,7 @@ An advantage of virtual talks is that I didn't have to make scribbles (aka notes
 
 Zoom and the newly discovered [rambly](https://rambly.app/) (kudos to [Alison Dowdney](https://twitter.com/alisondowdney)) made up for the lack of one-to-one interaction. I connected with a lot of people and contributors through these channels. Everyone was very kind and gave me a lot of advice for further contributions and involvement in open source.
 
-The really enjoyed the workshop **Migration 101: From VMs to Kubernetes by Luke Kysow and Iryna Shustava** and further interacted with them via the live Q/A and slack channels.
+The enjoyed the workshop **Migration 101: From VMs to Kubernetes by Luke Kysow and Iryna Shustava** and further interacted with them via the live Q/A and slack channels.
 
 For the rest of the day, I attended a few **Graduated Project Lightning Talk** until I could resist my sleep.
 
@@ -58,7 +58,7 @@ On the final day, I attended some great sessions.
 
 The keynote **Predictions from the Technical Oversight Committee (TOC) by Liz Rice** gave insight into the current developments in TOC.
  
-I really enjoyed the talk **Building Linux Distributions for Fun and Profit by Margarita Manterola** where she talked about the current trends in operating systems particularly the developments in containerized operating systems and their scope in the near future. (Btw, she has a great collection of books too).
+I enjoyed the talk **Building Linux Distributions for Fun and Profit by Margarita Manterola** where she talked about the current trends in operating systems particularly the developments in containerized operating systems and their scope in the near future. (Btw, she has a great collection of books too).
 
 The **Peer Group Mentoring + Career Networking** is by far my favorite event during the conference. I had to wake up till 5 in the morning but it was totally worth it. We were arranged in a group of 6 with a mentor and talked about various prospects of open source particularly: technical, community, and careers. I met with a lot of developers and mentors during the meets. In the end, the sessions/party with [Rin Oliver](https://twitter.com/kiran_oliver) was great and a lot of fun.
 
