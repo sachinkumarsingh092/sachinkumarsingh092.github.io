@@ -13,3 +13,7 @@
 - name: Bash
   percentage: 70
   color: info
+
+- name: Golang
+  percentage: 70
+  color: secondary
