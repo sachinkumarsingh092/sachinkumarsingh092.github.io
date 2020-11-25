@@ -39,7 +39,7 @@ Met some amazing developers and community members in rambly. It was so good to s
 
 Talked to many representatives and developers of different companies and startups about their open source projects via their sponsors booths. Also grabbed (soon to come) a lot of `schwags` 🤩.
 
-![Enter Rambly](../assets/rambly,png "Enter Rambly")
+![Enter Rambly](../assets/rambly.png "Enter Rambly")
 ## Day 3
 
 The keynotes **Moving Cloud Native Beyond HTTP: Adding Protocols to Unlock New Use Cases by Jonathan Beri** and **More Power, Less Pain: Building an Internal Platform with CNCF Tools by David Sudia** were great and inspiring. 
