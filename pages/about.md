@@ -16,9 +16,5 @@ I'm a 3rd year student at USICT, GGSIPU in Information Technology.
 </div>
 
 <div class="row">
-{% include about/experience.html %}
-</div>
-
-<div class="row">
 {% include about/timeline.html %}
 </div>
