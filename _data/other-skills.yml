@@ -5,3 +5,11 @@
 - name: postgresSQL
   percentage: 80
   color: success
+
+- name: Docker 
+  percentage: 50
+  color: dark
+
+- name: Kubernetes
+  percentage: 50
+  color: danger
