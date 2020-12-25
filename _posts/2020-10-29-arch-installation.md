@@ -93,7 +93,7 @@ Another way to make partions using starting and ending block points:
 #### Format the partitions and mount filesystems
 Set up the file system of the root partition:
 ```zsh
-`#` mkfs.ext4 /dev/sdbX
+# mkfs.ext4 /dev/sdbX
 ```
 Mount the decrypted partition into `/mnt`:
 ```zsh
