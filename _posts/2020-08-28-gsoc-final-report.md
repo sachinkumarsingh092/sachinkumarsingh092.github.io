@@ -1,6 +1,6 @@
 ---
 title: Final GSoC'20 report for GNU Astro
-tags: [GSoC]
+tags: [GSoC, open-source]
 style: fill
 color: primary
 description: A short description of what work was done, what code got merged, what code didn't get merged, and what's left to do.
