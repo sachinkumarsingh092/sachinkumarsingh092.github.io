@@ -7,9 +7,9 @@
   color: success
 
 - name: Docker 
-  percentage: 50
+  percentage: 70
   color: dark
 
 - name: Kubernetes
-  percentage: 50
+  percentage: 70
   color: danger

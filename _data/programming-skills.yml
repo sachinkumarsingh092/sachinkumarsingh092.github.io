@@ -6,14 +6,15 @@
   percentage: 80
   color: dark
 
-- name: HTML5/CSS3
+- name: Golang
+  percentage: 80
+  color: secondary
+
+- name: HTML/CSS
   percentage: 70
   color: danger
 
-- name: Bash
+- name: Shell
   percentage: 70
   color: info
 
-- name: Golang
-  percentage: 70
-  color: secondary
