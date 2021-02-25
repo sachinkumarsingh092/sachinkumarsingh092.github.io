@@ -14,7 +14,7 @@ Maybe I take life too seriously. A bit more than I should. Thinking what I'll mi
 
 For no obvious reason, these lines from *The God of Small Things* comes to mind:
 
-{% include elements/highlight.html text=""Here they learned to Wait. To Watch. To think thoughts and not voice them."" %}
+"{% include elements/highlight.html text="Here they learned to Wait. To Watch. To think thoughts and not voice them." %}"
 
 Sachin.
 
