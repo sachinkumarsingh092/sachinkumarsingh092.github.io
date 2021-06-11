@@ -1,6 +1,6 @@
 ---
 title: My KubeCon + CloudNativeCon North America 2020 virtual experience 
-tags: [meetups]
+tags: [meetups, cloud-native]
 style: fill
 color: secondary
 description: My favorite talks and some other stuff I learned during the conference.

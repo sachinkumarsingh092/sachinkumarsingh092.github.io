@@ -18,6 +18,6 @@ For no obvious reason, these lines from *The God of Small Things* comes to mind:
 
 Sachin.
 
-**P.S** - The title and description of this blog are from a song I listened to that morning and loved it instantly:
+**P.S** - The title and description of this blog/rant are from a song I'm listening right now while writing this and I love it:
 
 ![A Toast and a Spirit](../assets/a-toast-and-a-spirit.png "Spotify: A Toast and a Spirit")
