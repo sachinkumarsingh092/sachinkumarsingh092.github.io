@@ -8,7 +8,7 @@ weight: 3
 # **About Me**
 
 Hi I am **{{ site.author.name }}** :wave:,<br>
-I'm a junior year student at Guru Gobind Singh Indraprastha University in Information Technology.
+I'm a junior undergraduate at Guru Gobind Singh Indraprastha University in Information Technology.
 
 <div class="row">
 {% include about/skills.html title="Programming Skills" source=site.data.programming-skills %}
