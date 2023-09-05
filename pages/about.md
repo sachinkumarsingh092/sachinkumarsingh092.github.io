@@ -8,7 +8,7 @@ weight: 3
 # **About Me**
 
 Hi I am **{{ site.author.name }}** :wave:,<br>
-I'm a junior undergraduate at Guru Gobind Singh Indraprastha University in Information Technology.
+I'm a Software Engineer from India, intrested in Distributed System, low level development and just programming in general.
 
 <div class="row">
 {% include about/skills.html title="Programming Skills" source=site.data.programming-skills %}

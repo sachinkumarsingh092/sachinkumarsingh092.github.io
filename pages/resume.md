@@ -5,4 +5,4 @@ permalink: /resume/
 weight: 4
 ---
 
-The pdf version is linked [here](https://drive.google.com/file/d/1pEPcS3gGVj4ond00Lo6cFk2VUBHId-9M/view?usp=sharing)
+The pdf version is linked [here](https://drive.google.com/file/d/1qUll6rmRyaAXfHZQKw1b52gqSQP44koy/view?usp=sharing)

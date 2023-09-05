@@ -1,20 +1,25 @@
-- title: Software Engineering Intern @ HackerRank
-  from: June'21
-  to: present
+- title: Software Engineering at Canonical
+  from: September'22
+  to: current
   description: 
 
-- title: Intern @CNCF
+- title: Software Engineering Intern at VMware
+  from: Feburary'22
+  to: August'22
+  description: 
+
+- title: Software Engineering Intern at HackerRank
+  from: June'21
+  to: December'21
+  description: 
+
+- title: Intern at CNCF
   from: Feb'21
   to: May'21
-  description: Working on SPIFFE/SPIRE (https://spiffe.io) project as a part of LFX mentorship under CNCF to design and implement a health subsystem for SPIRE.
+  description: 
 
-- title: Student Developer 
+- title: Student Developer at Google Summer of Code 
   from: May'20
   to: August'20
-  description: Google Summer of Code'20 at The GNU project.
-
-- title: Student, GGSIPU 
-  from: 2018
-  to: 2022
-  description: Bachelor of technology (B.Tech) 3rd year student in Information Technology (IT) at University School of Information, Communication and technology, GGSIPU.
+  description: 
 
